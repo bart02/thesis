@@ -1,0 +1,36 @@
+{
+    "name": "iu_thesis_template",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "james-yu.latex-workshop"
+            ],
+            "settings": {
+                // General settings
+                "files.eol": "\n",
+                // Latex settings
+                "latex-workshop.linting.chktex.enabled": true,
+                "latex-workshop.linting.chktex.exec.path": "chktex",
+                "latex-workshop.latex.clean.subfolder.enabled": true,
+                "latex-workshop.latex.autoClean.run": "onBuilt",
+                "editor.formatOnSave": true,
+                "files.associations": {
+                    "*.tex": "latex"
+                },
+                "latex-workshop.latexindent.path": "latexindent",
+                "latex-workshop.latexindent.args": [
+                    "-g=/dev/null",
+                    "-c",
+                    "%DIR%/",
+                    "%TMPFILE%",
+                    "-y=defaultIndent: '%INDENT%'"
+                ],
+                "latex-workshop.latex.clean.method": "glob",
+                "latex-workshop.latex.outDir": "%DIR%/out"
+            }
+        }
+    }
+}
