@@ -1,53 +1,167 @@
-@ARTICLE{A,
-  author = {A. A. Aardvark},
-  title = {Article title},
-  journal = {Journal Title},
-  year = {1900},
-  volume = {1},
-  pages = {1--8},
-  number = {1}
+@inproceedings{attention,
+  title     = {Attention is All you Need},
+  volume    = {30},
+  url       = {https://papers.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html},
+  booktitle = {Advances in Neural Information Processing Systems},
+  publisher = {Curran Associates, Inc.},
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, Łukasz and Polosukhin, Illia},
+  year      = {2017}
 }
 
-@incollection{B,
-  pages = {627-637},
-  title = {Title of chapter in the book,},
-  author = {Sweetser, Penny},
-  crossref = {crref}
-}
-@book{crref,
-  title = {Title of Published Book},
-  booktitle = {Title of Published Book},
-  publisher = {Charles River Media},
-  year = {2004},
-  address = {Hingham, Massachusetts, USA},
-  edition = {1}
-}
-
-@ARTICLE{C,
-  author = {A. A. Abramson and B. B. Barbie and C. C. Rider},
-  title = {Article title},
-  journal = {Journal Three},
-  year = {1900},
-  volume = {1},
-  pages = {192--244},
-  number = {1}
+@inproceedings{bert,
+  title     = {{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  author    = {Devlin, Jacob  and
+               Chang, Ming-Wei  and
+               Lee, Kenton  and
+               Toutanova, Kristina},
+  booktitle = {Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  volume    = {1},
+  month     = jun,
+  year      = {2019},
+  address   = {Minneapolis, Minnesota},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/N19-1423},
+  pages     = {4171--4186}
 }
 
-@ARTICLE{D,
-  author = {J.K.Author},
-  title = {Article title},
-  journal = {Journal Three},
-  year = {1900},
-  month = {6},
-  volume = {1},
-  pages = {192--244},
-  number = {1},
-  note="Accessed: June 19, 2005. doi: 10.1109/TTHZ.2016.2544142. [Online]. Available: \url{https://ieeexplore.ieee.org/document/7463081}"
+@inproceedings{gpt,
+  author    = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+  booktitle = {Advances in Neural Information Processing Systems},
+  pages     = {1877--1901},
+  publisher = {Curran Associates, Inc.},
+  title     = {Language Models are Few-Shot Learners},
+  url       = {https://papers.nips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html},
+  volume    = {33},
+  year      = {2020}
 }
 
-@CONFERENCE{F,
-  author       = "J\dot K\dot Author",
-  title        = "Title of paper",
-  booktitle    = "Abbreviated Name of Conf.",
-  note         = "1900, pp. 16--19. Accessed: June 19, 2005. [Online]. Available: \url{http://www.computer.org/csdl/proceedings/dac/2003/2394/00/2394001-abs.html}",
+@misc{llama,
+  title         = {{LLaMA}: Open and Efficient Foundation Language Models},
+  author        = {Hugo Touvron and Thibaut Lavril and Gautier Izacard and Xavier Martinet and Marie-Anne Lachaux and Timothée Lacroix and Baptiste Rozière and Naman Goyal and Eric Hambro and Faisal Azhar and Aurelien Rodriguez and Armand Joulin and Edouard Grave and Guillaume Lample},
+  year          = {2023},
+  eprint        = {2302.13971},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@misc{llama2,
+  title         = {{Llama 2}: Open Foundation and Fine-Tuned Chat Models},
+  author        = {Hugo Touvron and Louis Martin and Kevin Stone and Peter Albert and Amjad Almahairi and Yasmine Babaei and Nikolay Bashlykov and Soumya Batra and Prajjwal Bhargava and Shruti Bhosale and Dan Bikel and Lukas Blecher and Cristian Canton Ferrer and Moya Chen and Guillem Cucurull and David Esiobu and Jude Fernandes and Jeremy Fu and Wenyin Fu and Brian Fuller and Cynthia Gao and Vedanuj Goswami and Naman Goyal and Anthony Hartshorn and Saghar Hosseini and Rui Hou and Hakan Inan and Marcin Kardas and Viktor Kerkez and Madian Khabsa and Isabel Kloumann and Artem Korenev and Punit Singh Koura and Marie-Anne Lachaux and Thibaut Lavril and Jenya Lee and Diana Liskovich and Yinghai Lu and Yuning Mao and Xavier Martinet and Todor Mihaylov and Pushkar Mishra and Igor Molybog and Yixin Nie and Andrew Poulton and Jeremy Reizenstein and Rashi Rungta and Kalyan Saladi and Alan Schelten and Ruan Silva and Eric Michael Smith and Ranjan Subramanian and Xiaoqing Ellen Tan and Binh Tang and Ross Taylor and Adina Williams and Jian Xiang Kuan and Puxin Xu and Zheng Yan and Iliyan Zarov and Yuchen Zhang and Angela Fan and Melanie Kambadur and Sharan Narang and Aurelien Rodriguez and Robert Stojnic and Sergey Edunov and Thomas Scialom},
+  year          = {2023},
+  eprint        = {2307.09288},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@misc{mistral,
+  title         = {{Mistral 7B}},
+  author        = {Albert Q. Jiang and Alexandre Sablayrolles and Arthur Mensch and Chris Bamford and Devendra Singh Chaplot and Diego de las Casas and Florian Bressand and Gianna Lengyel and Guillaume Lample and Lucile Saulnier and Lélio Renard Lavaud and Marie-Anne Lachaux and Pierre Stock and Teven Le Scao and Thibaut Lavril and Thomas Wang and Timothée Lacroix and William El Sayed},
+  year          = {2023},
+  eprint        = {2310.06825},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@misc{compressingllm,
+  title         = {Compressing {LLMs}: The Truth is Rarely Pure and Never Simple},
+  author        = {Ajay Jaiswal and Zhe Gan and Xianzhi Du and Bowen Zhang and Zhangyang Wang and Yinfei Yang},
+  year          = {2023},
+  eprint        = {2310.01382},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@misc{distilling,
+  title         = {Distilling the Knowledge in a Neural Network},
+  author        = {Geoffrey Hinton and Oriol Vinyals and Jeff Dean},
+  year          = {2015},
+  eprint        = {1503.02531},
+  archiveprefix = {arXiv},
+  primaryclass  = {stat.ML}
+}
+
+@misc{distilbert,
+  title         = {{DistilBERT}, a distilled version of {BERT}: smaller, faster, cheaper and lighter},
+  author        = {Victor Sanh and Lysandre Debut and Julien Chaumond and Thomas Wolf},
+  year          = {2020},
+  eprint        = {1910.01108},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@article{kl,
+  title        = {On Information and Sufficiency},
+  volume       = {22},
+  issn         = {0003-4851},
+  doi          = {10.1214/aoms/1177729694},
+  pages        = {79--86},
+  number       = {1},
+  journaltitle = {The Annals of Mathematical Statistics},
+  shortjournal = {Ann. Math. Statist.},
+  author       = {Kullback, S. and Leibler, R. A.},
+  date         = {1951-03},
+  langid       = {english}
+}
+
+
+@inproceedings{multidistil,
+  author    = {Yang, Ze and Shou, Linjun and Gong, Ming and Lin, Wutao and Jiang, Daxin},
+  title     = {Model Compression with Two-stage Multi-teacher Knowledge Distillation for Web Question Answering System},
+  year      = {2020},
+  isbn      = {9781450368223},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  doi       = {10.1145/3336191.3371792},
+  booktitle = {Proceedings of the 13th International Conference on Web Search and Data Mining},
+  pages     = {690–698},
+  numpages  = {9},
+  keywords  = {two-stage, multi-teacher, model compression, knowledge distillation, distillation pre-training},
+  location  = {Houston, TX, USA},
+  series    = {WSDM '20}
+}
+
+@inproceedings{stepbystep,
+  title     = {Distilling {Step-by-Step!} Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes},
+  author    = {Hsieh, Cheng-Yu  and
+               Li, Chun-Liang  and
+               Yeh, Chih-kuan  and
+               Nakhost, Hootan  and
+               Fujii, Yasuhisa  and
+               Ratner, Alex  and
+               Krishna, Ranjay  and
+               Lee, Chen-Yu  and
+               Pfister, Tomas},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2023},
+  month     = jul,
+  year      = {2023},
+  address   = {Toronto, Canada},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2023.findings-acl.507},
+  pages     = {8003--8017}
+}
+
+@misc{cot,
+  title         = {Chain-of-Thought Prompting Elicits Reasoning in Large Language Models},
+  author        = {Jason Wei and Xuezhi Wang and Dale Schuurmans and Maarten Bosma and Brian Ichter and Fei Xia and Ed Chi and Quoc Le and Denny Zhou},
+  year          = {2023},
+  eprint        = {2201.11903},
+  archiveprefix = {arXiv},
+  primaryclass  = {cs.CL}
+}
+
+@inproceedings{socraticcot,
+  title     = {Distilling Reasoning Capabilities into Smaller Language Models},
+  author    = {Shridhar, Kumar  and
+               Stolfo, Alessandro  and
+               Sachan, Mrinmaya},
+  editor    = {Rogers, Anna  and
+               Boyd-Graber, Jordan  and
+               Okazaki, Naoaki},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2023},
+  month     = jul,
+  year      = {2023},
+  address   = {Toronto, Canada},
+  publisher = {Association for Computational Linguistics},
+  doi       = {10.18653/v1/2023.findings-acl.441},
+  pages     = {7059--7073}
 }

@@ -1,68 +1,30 @@
 \chapter{Literature Review}
 \label{chap:lr}
-\chaptermark{Second Chapter Heading}
 
+The structure of the literature review in this chapter is designed to offer an in-depth and complete insight into the concept of model distillation, particularly about the research question at hand. This review aims to elucidate the various facets of model distillation, including its theoretical foundations, practical applications, and relevance to the specific research question being addressed.
 
-\Blindtext[2]
+\section{Large Language Models}
 
-\section{Another Section}
-\Blindtext[1]
-\newpage
-With the widespread of computing systems, information processing, and net working, the practice of replacing paper documentation to electronic documentation has become more and more common. Electronic documentation within the workplace has several advantages over the traditional one, such as being easy to share, copy and edit the document. However, these advantages also present a problem. A malefactor, having access to the system, can easily copy and leak the document, without leaving any trace. Such actions are virtually undetectable in most systems, so, the malefactor goes unpunished. In this thesis, we propose one solution to the problem: digital watermarking.
+One of the possible strategies to make models simpler is model quantization. However, the quantization can lead to a reduction in model accuracy. As the weights are represented with fewer bits, there is an inherent loss of information for some models or tasks. Some models, especially those that rely on precise weight values, might experience a significant degradation in performance post-quantization \cite{compressingllm}. Another consideration is hardware compatibility. While quantized models might be faster and smaller, they may require specialized hardware or software support to run efficiently. For instance, certain accelerators are optimized for 8-bit quantized operations but less efficient in handling 4-bit or 2-bit operations. Because of that, practitioners often choose to deploy smaller specialized models instead of n-billion parameters LLMs.
 
-Every electronic document within the protected system is marked with an invisible digital watermark, containing information about the user, accessing this particular document. Therefore, in case the protected company discovers the leaked document, they will be able to identify the machine of the malicious person and time when the document was leaked. This will allow inflicting punishment on the malefactor, recovering the costs of the leak, and potentially preventing future ones.
+\section{Traditional model distillation}
 
-\begin{longtable}{c|c}
-    \caption[This is the title I want to appear in the List of Tables]{Simulation Parameters} \label{table:secsimulation_params} \\
-    \hline
-    A                                     & B                                                                                    \\
-    \hline
-    \endfirsthead
-    \multicolumn{2}{@{}l}{}                                                                                                      \\
-    \hline
-    A                                     & B                                                                                    \\
-    \hline
-    \endhead
-    \hline
-    \textbf{Parameter}                    & \textbf{Value}                                                                       \\
-    \hline
-    Number of vehicles                    & $|\mathcal{V}|$                                                                      \\
-    \hline
-    Number of RSUs                        & $|\mathcal{U}|$                                                                      \\
-    \hline
-    RSU coverage radius                   & 150 m                                                                                \\
-    \hline
-    V2V communication radius              & 30 m                                                                                 \\
-    \hline
-    Smart vehicle antenna height          & 1.5 m                                                                                \\
-    \hline
-    RSU antenna height                    & 25 m                                                                                 \\
-    \hline
-    Smart vehicle maximum speed           & $v_{max}$ m/s                                                                        \\
-    \hline
-    Smart vehicle minimum speed           & $v_{min}$ m/s                                                                        \\
-    \hline
-    Common smart vehicle cache capacities & $[50, 100, 150, 200, 250]$ mb                                                        \\
-    \hline
-    Common RSU cache capacities           & $[5000,1000,1500,2000,2500]$ mb                                                      \\
-    \hline
-    Common backhaul rates                 & $[75, 100, 150]$ mb/s                                                                \\
-    \hline
-\end{longtable}
+One of the paradigms for deriving a more compact model from a larger one is known as ``model distillation.'' Distillation is the process wherein knowledge from a larger model (often called the teacher model) is transferred to a smaller model (student model). The fundamental premise behind this is that the larger model has captured a deep understanding of the data, which can be imparted to a more compact model, ensuring that the smaller model performs at a level comparable to its bigger counterpart without consuming the same computational resources.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[]{figs/images.png}
-    \caption{One kernel at $x_s$ (\emph{dotted kernel}) or two kernels at
-        $x_i$ and $x_j$ (\textit{left and right}) lead to the same summed estimate
-        at $x_s$. This shows a figure consisting of different types of
-        lines. Elements of the figure described in the caption should be set in
-        italics, in parentheses, as shown in this sample caption.}
-    \label{fig:secex}
-\end{figure}
+The distillation typically involves training the student model on a combination of the original dataset and the softmax outputs (probabilities) produced by the teacher model. Rather than employing the traditional cross-entropy method with hard targets (one-hot encoded labels), knowledge is transferred from the teacher to the student through cross-entropy using these soft outputs (the teacher’s probability distributions). These outputs carry rich information about the data distribution, which aids the student model in capturing the nuances of complex decision boundaries. By leveraging the teacher model’s expertise, the student model can learn more efficiently and produce results that are close to, and sometimes even surpass, the performance of the teacher model \cite{distilling}.
 
-This description implies several essential properties of the task at hand:
-\begin{enumerate}
-    \item Watermark must contain all necessary information, but still, be placeable and recognizable even on smaller images. The produced watermark must be compact but have the possibility to store enough information.
-    \item To prevent easy tampering, the watermark must be invisible to the naked eye (and, preferably, to basic image parsing tools). If malefactor does not know about the existence of watermark, they might not even try to remove it and disable it.
-\end{enumerate}
+One of the popular distilled models is DistilBERT \cite{distilbert}. It is a streamlined version of the original BERT model. Kullback-Leibler (KL) Divergence loss \cite{kl} is a key aspect of the training process for DistilBERT\@. This loss is a measure of how one probability distribution diverges from a second, expected probability distribution. In the context of model distillation, it is used to quantify the difference between the output distributions of the teacher model and the student model.
+
+As proposed by Yang et al.\ \cite{multidistil}, multiple teachers jointly train a single student in a unified framework. Various pre-trained teacher models are employed to generate soft labels for the training data. Consequently, each training data item comprises two elements: the golden label (the definitive binary label) determined by human judges and numerous soft labels (probabilistic labels ranging between 0 and 1) provided by the different teacher models. During the training, the student model, equipped with several headers, simultaneously learns from both the golden label and the soft labels. In the inference phase, the final decision is derived from a weighted combination of all outputs from the student headers. This concept is similar to the human learning process, where knowledge is acquired not from a single teacher but from multiple educators, leading to a more unbiased and comprehensive understanding.
+
+Traditional model distillation is a crucial advancement in machine learning (ML), known for enabling the development of smaller, more efficient models that maintain the advanced understanding of their larger counterparts. However, these methods are not used extensively for the LLM.
+
+\section{Prompt-based distillation}
+
+Beyond the traditional distillation, where a student model is trained on the probabilities outputs of the teacher, there is another concept of distillation when dealing with LLMs. This concept involves using the teacher model to generate prompts or tasks that can be especially informative for training the student model. This technique is called “prompt-based distillation.”
+
+Hsieh et al.\ \cite{stepbystep} propose the method that first utilizes chain-of-thought (CoT) \cite{cot} prompting to extract rationales from an LLM\@. Then, authors utilize these rationales alongside the task labels to train student models. At its core, rationales offer a more in-depth insight into the reasoning behind associating an input with a particular output label. They frequently encapsulate pertinent task knowledge that might be challenging to deduce from the original inputs alone. Shridhar et al.\ \cite{socraticcot} introduce a different approach called “Socratic CoT.” This method involves learning to break down the initial problem into a series of smaller subproblems. These subproblems are then used to steer the intermediate steps of reasoning. To implement this, they train two compact prompt-distilled models: one for decomposing the problem and another for solving the subproblems. Their strategies enhance the performance of student models by over 70\% compared to the baselines.
+
+\section*{Conclusion}
+
+While the literature on model distillation provides comprehensive insights into its application in ML, a noticeable research gap exists in the specific context of Large Language Models. The unique challenges posed by the immense size and complexity of LLM call for distillation techniques that currently need to be explored. Addressing this gap by developing or optimizing distillation methods specifically for LLM could significantly enhance their computational efficiency and broaden their practical applicability, especially in resource-limited scenarios. This area of research promises not only to advance the field of ML but also to make the benefits of LLM more accessible and sustainable.
