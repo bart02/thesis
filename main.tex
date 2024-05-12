@@ -20,7 +20,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage[english]{babel}
-\usepackage[backend=biber,style=ieee,autocite=inline]{biblatex}
+\usepackage[backend=biber,style=ieee,autocite=inline,maxnames=3,mincitenames=1,maxcitenames=1]{biblatex}
 \bibliography{ref.bib}
 \DefineBibliographyStrings{english}{%
   bibliography = {References},}
@@ -121,6 +121,9 @@
 }
 
 \begin{document}
+\renewcommand{\figureautorefname}{Fig.}
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
 
 \includepdf[pages=-,offset=25.5mm -25.5mm]{title.pdf}
 \tableofcontents
