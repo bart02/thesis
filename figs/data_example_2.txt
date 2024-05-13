@@ -1,0 +1,12 @@
+Input:
+An older man sits with his orange juice at a small table in a coffee shop while employees in bright colored shirts smile in the background.
+A boy flips a burger.
+
+Label (GT):
+contradiction
+
+Label (LLM):
+contradiction
+
+Rationale (by LLM):
+The man is not a boy. The man is not flipping a burger.

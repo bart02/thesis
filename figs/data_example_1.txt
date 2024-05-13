@@ -1,0 +1,12 @@
+Input:
+A person on a horse jumps over a broken down airplane.
+A person is training his horse for a competition.
+
+Label (GT):
+neutral
+
+Label (LLM):
+neutral
+
+Rationale (by LLM):
+The person could be training his horse for a competition, but it is not necessarily the case.
