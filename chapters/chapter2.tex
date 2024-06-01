@@ -1,7 +1,7 @@
 \chapter{Literature Review}
 \label{chap:lr}
 
-The structure of the literature review in this chapter is designed to offer an in-depth and complete insight into the concept of model distillation, particularly about the research question at hand. This review aims to elucidate the various facets of model distillation, including its theoretical foundations, practical applications, and relevance to the specific research question being addressed.
+The structure of the literature review in this chapter is designed to offer an in-depth and complete insight into the concept of ML model distillation, particularly about the research objective at hand. This review aims to elucidate the various facets of model distillation, including its theoretical foundations, practical applications, and relevance to the specific research objective being addressed.
 
 \section{Search Process}
 
@@ -14,7 +14,7 @@ One of the paradigms for deriving a more compact model from a larger one or tran
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=0.7\linewidth]{figs/distillation.jpg}
-    \caption{Distillation process. Source: \cite{kd_simplified}.}
+    \caption[Overview of the distillation process]{Overview of the distillation process. Source: \cite{kd_simplified}.}
     \label{fig:distillation}
 \end{figure}
 
@@ -47,13 +47,6 @@ Beyond the white-box distillation, there is another concept of distillation when
 \citeauthor{socraticcot} \cite{socraticcot} introduce the approach called ``Socratic CoT\@.'' This method involves learning to split the initial problem into a series of small subproblems. These subproblems are then used to steer the intermediate steps of reasoning. To implement this, they train two compact prompt-distilled models: one for decomposing the problem and another for solving the subproblems.
 
 Conversely, \citeauthor{stepbystep} \cite{stepbystep} propose a different method that also utilizes chain-of-thought (CoT) \cite{cot} prompting to extract rationales from an LLM\@. Then, authors utilize these rationales alongside the task labels to train student models (\autoref{fig:stepbystep}). At its core, rationales offer a more in-depth insight into the reasoning behind associating an input with a particular output label. They frequently encapsulate pertinent task knowledge that might be challenging to deduce from the original inputs alone. Unlike the previous method, a student model trained in this way does not require pre-generated rationales to be applied to the test set.
-
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=0.99\linewidth]{figs/stepbystep.png}
-    \caption{Overview on Distilling step-by-step method. Source: \cite{stepbystep}.}
-    \label{fig:stepbystep}
-\end{figure}
 
 The TinyLLM method \cite{tinyllm} improves the previous method by acquiring rationales from multiple LLMs. The authors introduce an optional in-context example generator to produce context-specific examples for a given input to ensure that these teacher-generated rationales are contextually grounded. The student model is trained through multi-task instruction tuning \cite{t5,t0}, including the ground truth label.
 
