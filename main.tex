@@ -50,7 +50,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=black, citecolor=black}
+\hypersetup{colorlinks=true,allcolors=black}
 \urlstyle{same}
 
 \usepackage{paralist}
@@ -83,6 +83,8 @@
 }
 
 % \setcounter{secnumdepth}{4}
+\counterwithout{table}{chapter}
+\renewcommand{\thetable}{\Roman{table}}
 \captionsetup[table]{labelfont={normalfont}, name={TABLE}, labelsep={newline}}
 \setlength{\parindent}{2em} 
 \DeclareCaptionLabelSeparator{figSep}{.\quad}
