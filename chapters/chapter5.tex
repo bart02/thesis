@@ -1,25 +1,26 @@
 \chapter{Analysis and Discussion}
 \label{chap:eval}
 
-This chapter delves into the analysis of the experimental results obtained in the previous chapter, focusing on the implications and insights drawn from the performance of various knowledge distillation techniques. The discussion adressed to the central research question ``How black-box distillation effective for sequence classification'' and centers on evaluating the successes and limitations of these methods and considering their theoretical and practical significance within the field of NLP\@.
 
-The experiments conducted have provided valuable data on the utility of knowledge distillation techniques in improving the efficiency and efficacy of smaller models for sequence classification.
+This chapter delves into the analysis of the experimental results obtained in the previous chapter, focusing on the implications and insights drawn from the performance of various knowledge distillation techniques. The discussion addresses the central research question, ``How is black-box distillation effective for sequence classification?'' and centers on evaluating the successes and limitations of these methods and considering their theoretical and practical significance within the field of NLP\@.
 
-The baseline RoBERTa model exhibited superior classification accuracy compared to the T5 model, underscoring its robust performance in sequence classification tasks. This observation indicated that RoBERTa could be a more effective recipient for knowledge distillation, suggesting a promising avenue for enhancing its capabilities through this technique. But, pure rationale-augmented training approach for RoBERTa did not yield the anticipated improvements in performance on test set without rationales. This finding invites a deeper exploration of how context and additional information are integrated into model training processes. 
+Conducted experiments have provided valuable data on the utility of knowledge distillation techniques in improving the efficiency and efficacy of smaller models for sequence classification.
 
-The T5 model, originally designed for Seq2Seq text generation tasks, demonstrates comparatively lower performance in sequence classification tasks. However, this generative capability positions the T5 model as particularly suitable for generating rationales within a knowledge distillation context. By leveraging its strength in producing detailed and nuanced text, T5 can be effectively utilized to generate explanatory rationales. These rationales can then be used to augment the training data for other models, such as RoBERTa, which excel in classification tasks.
+The baseline RoBERTa model exhibited superior classification accuracy compared to the T5 model, underscoring its robust performance in sequence classification tasks. This observation indicated that RoBERTa could be a more effective recipient for knowledge distillation, suggesting a promising avenue for enhancing its capabilities through this technique. However, a pure rationale-augmented training approach for RoBERTa did not yield the anticipated improvements in performance on the test set without rationales. This finding invites a deeper exploration of how context and additional information are integrated into model training processes. 
 
-The experimental results also highlighted the importance of generation and integration of rationales into the black-box distillation process. When LLMs like GPT generate rationales, they offer insights into the reasoning behind their outputs. These rationales can be seen as a form of ``unpacking'' the black-box. Depending on the method of deriving rationale from the LLM, the degree of this ``unpacking'' is changed. This distinction is crucial, as it influences the quality and relevance of the rationales generated, which, in turn, affects the performance of the student model.
+The T5 model, initially designed for Seq2Seq text generation tasks, demonstrates comparatively lower performance in sequence classification tasks. However, this generative capability positions the T5 model as particularly suitable for generating rationales within a knowledge distillation context. By leveraging its strength in producing detailed and nuanced text, T5 can effectively generate explanatory rationales. These rationales can augment the training data for other models, such as RoBERTa, which excel in classification tasks.
+
+The experimental results also highlighted the importance of the generation and integration of rationales into the black-box distillation process. When LLMs like GPT generate rationales, they offer insights into the reasoning behind their outputs. These rationales can be seen as a form of ``unpacking'' the black-box. Depending on the method of deriving rationale from the LLM, the degree of this ``unpacking'' is changed. This distinction is crucial, as it influences the quality and relevance of the rationales generated, which, in turn, affects the performance of the student model.
 
 \section{Results of proposed method on WOS dataset}
 
-The distilation pipeline developed in this research, which combines the generative capabilities of T5 with the classification strengths of RoBERTa, offers a novel approach to enhancing the performance of smaller models. By leveraging the strengths of each model, this pipeline can potentially improve the efficiency and accuracy of sequence classification tasks. The experimental results demonstrated that this pipeline could effectively distill knowledge from the T5 model to the RoBERTa model, resulting in improved performance on the test set of the WOS dataset.
+The distillation pipeline developed in this research, which combines the generative capabilities of T5 with the classification strengths of RoBERTa, offers a novel approach to enhancing the performance of smaller models. By leveraging the strengths of each model, this pipeline can potentially improve the efficiency and accuracy of sequence classification tasks. The experimental results demonstrated that this pipeline could effectively distill knowledge from the T5 model to the RoBERTa model, resulting in improved performance on the test set of the WOS dataset.
 
-The application of the proposed knowledge distillation method, using rationales generated by the T5 model to train the RoBERTa model, resulted in an increase of 1-2\% in accuracy, precision, recall, and F1 score across experiments on the WOS dataset.
+Applying the proposed knowledge distillation method, using rationales generated by the T5 model to train the RoBERTa model, resulted in an increase of 1-2\% in accuracy, precision, recall, and F1 score across experiments on the WOS dataset.
 
-\section{Results of proposed method on e-SNLI dataset}
+\section{Results of the proposed method on e-SNLI dataset}
 
-In contrast, this pipeline did not yield significant improvements in performance on the test set of the e-SNLI\@. This discrepancy suggests that the effectiveness of the distillation pipeline may be influenced by many factors. Further investigation is required to determine the factors that contribute to the success or failure of this distillation process on different datasets.
+In contrast, this pipeline did not yield significant improvements in performance on the test set of the e-SNLI\@. This discrepancy suggests that many factors may influence the effectiveness of the distillation pipeline. Further investigation is required to determine the factors contributing to this distillation process's success or failure on different datasets.
 
 \section{Limitations and Future Work}
 
@@ -31,6 +32,6 @@ The results obtained are primarily based on the WOS dataset. While this provides
 
 The integration of rationales did not significantly enhance model performance for all data. Future work could explore different types of rationale integration or the development of models specifically designed to leverage complex contextual information more effectively.
 
-The scalability of the proposed pipeline under different operational conditions and data volumes remains to be tested. Often, pipelines are more complex in real-world scenarios, and deploying them at scale may introduce additional challenges that were not present in the experimental setup.
+The proposed pipeline's scalability under different operational conditions and data volumes remains to be tested. Pipelines are often more complex in real-world scenarios, and deploying them at scale may introduce additional challenges that were not present in the experimental setup.
 
-By addressing these limitations in future research, there is potential to enhance the robustness of the findings and expand the applicability of knowledge distillation methods in NLP.
+Addressing these limitations in future research has the potential to enhance the robustness of the findings and expand the applicability of knowledge distillation methods in NLP\@.
