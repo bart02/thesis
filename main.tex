@@ -128,10 +128,16 @@
 \renewcommand{\figureautorefname}{Fig.}
 \renewcommand{\chapterautorefname}{Chapter}
 \renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
 
 \includepdf[pages=-,offset=25.5mm -25.5mm]{title.pdf}
 \tableofcontents
+
+\let\origaddvspace\addvspace
+\renewcommand{\addvspace}[1]{}
 \listoftables
+\renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+
 \listoffigures
 \newpage
 
