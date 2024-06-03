@@ -1,5 +1,9 @@
 \begin{abstract}
     % skip one line to make the abstract start with indent
 
-    My abstract starts from here.
+    The exponential growth of transformer-based large language models (LLM) improved the state-of-the-art natural language processing field, offering unprecedented capabilities in performing complex language understanding tasks. However, the deployment of these models in real-world applications is hampered by their substantial computational and memory requirements. 
+    
+    To address this challenge, this thesis delves into the process of distilling an LLM into a sequence classification model. The aim is to compress the vast knowledge of LLMs into smaller, more efficient models that are suitable for practical applications. The study is primarily focused on black-box methods, a unique approach where knowledge is transferred from the LLM to a smaller model based solely on the LLM's output, without access to its internal parameters.
+
+    After a series of experiments, I propose a novel distillation pipeline that combines the generative capabilities of sequence-to-sequence models with the classification strengths of state-of-the-art encoder models. This pipeline effectively distills knowledge from the T5 model to the RoBERTa model, resulting in improved performance on the test set of the WOS dataset on 1-2\%.
 \end{abstract}
