@@ -32,8 +32,11 @@
         "-n22",
         "-n30",
         "-e16",
+        "-n8",
+        "-n1",
+        "-n46",
         "-q",
-        "-n8"
     ],
     "editor.wordWrap": "on",
+    "latex-workshop.latex.autoBuild.run": "never",
 }
